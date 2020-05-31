@@ -1,0 +1,15 @@
+$username= 'ahmedgalalagh152@gmail.com';
+     $hash='am3UPJebVN9L3Zln7C1ZAg%3D%3D';
+     $test = '0';
+     $sender= 'ahmed galal';
+     $number ='201005107219';
+     $message='ahmed galal mohamed';
+     $message=urlencode($message);
+     $myData="username=".$username."&hash=".$hash."&message=".$message."&number=".$number;
+     $chtxt = curl_init('http://api.txtlocal.com/send/?');
+     curl_setopt($ch,CURLOPT_POST,true);
+     curl_setopt($ch,CURLOPT_POSTFIELDS,$myData);
+     curl_setopt($ch,CURLOPT_FOLLOWLOCATION,true);
+     $rslt =curl_exec($chtxt);
+     curl_close($chtxt);
+     echo $rslt;
